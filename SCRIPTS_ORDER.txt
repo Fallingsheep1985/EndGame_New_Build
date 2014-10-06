@@ -1,3 +1,7 @@
+This is the order that scripts willl be added in, each script will have its own git commit
+
+
+CONFIG TRADERS
 SINGLE CURRENCY
 MULTI CHARACTER
 PLOTPOLE FOR LIFE

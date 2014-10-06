@@ -19,7 +19,7 @@ enableRadio false;
 // May prevent "how are you civillian?" messages from NPC
 enableSentences false;
 
-// DayZ Epochconfig
+//config
 spawnShoremode = 1; // Default = 1 (on shore)
 spawnArea= 1500; // Default = 1500
 // 
@@ -47,13 +47,13 @@ EpochEvents = [["any","any","any","any",30,"crash_spawner"],["any","any","any","
 dayz_fullMoonNights = true;
 
 //Load in compiled functions
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
+call compile preprocessFileLineNumbers "dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
 progressLoadingScreen 0.1;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
+call compile preprocessFileLineNumbers "dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
 progressLoadingScreen 0.2;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
 progressLoadingScreen 0.4;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";				//Compile regular functions
+call compile preprocessFileLineNumbers "dayz_code\init\compiles.sqf";				//Compile regular functions
 progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "server_traders.sqf";				//Compile trader configs
 progressLoadingScreen 1.0;
@@ -62,9 +62,9 @@ progressLoadingScreen 1.0;
 
 if (isServer) then {
 	//Compile vehicle configs
-	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\dynamic_vehicle.sqf";				
+	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Endgame_1.Napf\dynamic_vehicle.sqf";				
 	// Add trader citys
-	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_24.Napf\mission.sqf";
+	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Endgame_1.Napf\mission.sqf";
 
 	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 };
@@ -81,7 +81,7 @@ if (!isDedicated) then {
 	
 	
 	//anti Hack
-	[] execVM "\z\addons\dayz_code\system\antihack.sqf";
+	//[] execVM "\z\addons\dayz_code\system\antihack.sqf";
 
 	//Lights
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
